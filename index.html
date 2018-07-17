@@ -2,26 +2,67 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title><!-- 모바일 웹앱에서는 무의미 -->
+	<title></title> <!--모바일 웹앱에서는 무의미-->
 
-	<!-- 웹앱으로 만들기 위한 웹앱 UI 프레임워크 추가 -->
-	<!-- JQuery Mobile Framework 적용-->
+	<!-- 웹앱으로 만들기위한 웹앱UI프레임워크 추가 -->
+	<!-- Jquery Mobile Framework 적용 -->
 
-	<!-- 1. CDN방식 : WebApp에 많이 사용. 인터넷이 필수적이다. -->
+	<!-- 1. CDN방식 : WebApp에 많이사용-->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-	<!-- 2. 다운로드 방식 : HybridApp에 많이 사용 : 적용순서 중요!! -->
+	<!-- 2. 다운로드방식 : HybridApp에 많이 사용 : 적용순서중요!!-->
 	<link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.5.min.css">
 	<script type="text/javascript" src="jquery.min.js"></script>
 	<script type="text/javascript" src="jquery.mobile-1.4.5.min.js"></script>
-
 	
-
-
 </head>
 <body>
+
+	<!-- 모바일 한 화면 만들기 (Android의 Activity같은) -->
+	<!-- 블럭구분자(div) 이용하여 영역 구분 -->
+	<!-- jqm의 UI를 적용하기 위한 속성 : data-role="" -->
+	<!-- data-XXX 속성들은 커스텀속성이라고 함..대부분의 경우 data-XXX라고 되어있다면 jqm기술적용이라고 보면 됨. -->
+	<div data-role="page" id="page1">
+		<!-- ActionBar의 역할 -->
+		<div data-role="header">
+			<!-- h1~h6 모두 같은 사이즈 -->
+			<h2>Header Region</h2>			
+		</div>
+
+		<!-- 내용 영역 -->
+		<div data-role="content">
+			<h3>Heading3 요소</h3>
+			<h4>Heading4 요소</h4>
+
+			<p>This is Content Region.</p>
+
+			<!-- page2번으로 이동 -->
+			<!-- 이 문서안에 특정위치(아이디가 page2인 곳으로) -->
+			<a href="#page2" data-role="button">Go to Page2</a>
+
+		</div>
+
+		<!-- footer영역 -->
+		<div data-role="footer">
+			<!-- h1~h6 모두 같은 사이즈 -->
+			<h4>footer region</h4>			
+		</div>
+		
+	</div>
+
+	<!-- 한 화면에 2개의 page를 놓으면??? -->
+	<div data-role="page" id="page2">
+		<div data-role="header" data-theme="b">
+			<a href="#page1" data-icon="back">BACK</a>
+			<h2>PAGE 2</h2>
+		</div>
+
+		<div data-role="content">
+			<p>this is second page.</p>
+		</div>
+	</div>
 
 </body>
 </html>

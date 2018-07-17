@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+	<!-- 뷰포트 설정 : 브라우저가 보여주는 내용물 영역-->
+	<!-- viewport가 300인데 device의 width가 600이면 내용물을 2배 커져보임 -->
+	<!-- viewport가 300인데 device의 width가 150이면 내용물이 2배 작게 보여짐.-->
+	<!-- 안드로이드는 viewport에 width값지정이 불가! -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- JQM 적용하기 -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+
+	<!-- 첫번째 페이지 -->
+	<div data-role="page" id="page1">
+		<div data-role="header">
+			<h2>Main</h2>			
+		</div>
+
+		<div data-role="content">
+			<h1>Content Region</h1>
+			<p>This is main page.</p>
+			<!-- page2로 이동하기위한 버튼 -->
+			<a href="#page2" data-role="button" data-theme="b" data-transition="slide">Go to Page2</a>
+		</div>
+
+		<div data-role="footer" data-theme="b">
+			<h4>product by mrhisoft</h4>			
+		</div>		
+	</div>
+
+
+	<!-- 하나의 html문서안에 여러개의 page(Activity) 작성 가능. -->
+	<div data-role="page" id="page2">
+		<div data-role="header">
+			<h2>Second Page</h2>
+			<!-- header영역 안에 버튼 추가 : 최대 2개 까지 -->
+			<!-- 첫번재 a는 왼쪽에..두번재는 오른쪽에 배치됨. -->
+			<!-- header영역 안의 a요소는 자동 data-role="button"임. -->
+			<a href="#page1" data-icon="back">back</a>
+			<a href="#" data-icon="grid" data-iconpos="notext" data-theme="b">menu</a>
+		</div>
+
+		<div data-role="content">
+			<h1>#PAGE 2</h1>
+			<p>This is second page.</p>	
+			<!-- page1로 돌아가는 버튼  -->
+			<a href="#page1" data-role="button">Go Back to page1</a>
+			<!-- page3.html로 이동 -->
+			<a href="page3.html" data-role="button">Go to Page3</a>
+			<!-- page4.html로 이동 : no ajax -->
+			<!-- ajax를 사용하지 않으면 전환효과(data-transition)이 적용되지 않음. -->
+			<a href="page4.html" data-role="button" data-ajax="false" data-transition="slide">Go to Page4 ajax=false</a>
+		</div>
+		
+	</div>
+
+
+
+</body>
+</html>
